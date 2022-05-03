@@ -9,7 +9,7 @@ storageName="dmapi04"
 location="WestUS2" 
 
 # Change this if you are using your own github repository
-gitSource="https://github.com/Azure-Samples/azure-sql-db-node-rest-api.git"
+gitSource="https://github.com/woyoh/azure-sql-db-node-rest-api.git"
 
 # Check that local.settings.json exists
 settingsFile="./local.settings.json"

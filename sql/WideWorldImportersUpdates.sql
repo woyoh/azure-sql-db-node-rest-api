@@ -26,20 +26,16 @@ CREATE OR ALTER PROCEDURE web.get_customer
 @Json NVARCHAR(MAX)
 AS
 SET NOCOUNT ON;
-DECLARE @CustomerId INT = JSON_VALUE(@Json, '$.CustomerID');
+DECLARE @CustomerId INT = JSON_VALUE(@Json, '$.CustomerId');
 SELECT 
-	[CustomerID], 
-	[CustomerName], 
-	[PhoneNumber], 
-	[FaxNumber], 
-	[WebsiteURL],
-	[DeliveryAddressLine1] AS 'Delivery.AddressLine1',
-	[DeliveryAddressLine2] AS 'Delivery.AddressLine2',
-	[DeliveryPostalCode] AS 'Delivery.PostalCode'	
+	[CustomerId], 
+	[Name], 
+	[Location] AS 'Delivery.Location', 
+	[Email] AS 'Delivery.Email'
 FROM 
-	[Sales].[Customers] 
+	[dbo].[Customers] 
 WHERE 
-	[CustomerID] = @CustomerId
+	[CustomerId] = @CustomerId
 FOR JSON PATH
 GO
 

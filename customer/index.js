@@ -19,7 +19,8 @@ const executeSQL = (context, verb, entity, payload) => {
         },
         options: {
             database: process.env["db_database"],
-            encrypt: true
+            encrypt: true,
+            connectTimeout: 600000
         }
     });
 
